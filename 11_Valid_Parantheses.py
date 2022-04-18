@@ -4,7 +4,7 @@
 ### Ex: s = "(]"
 ### Result = False
 ###########################################################################
-s = ")()"
+s = ")()("
 
 def find_match():
     stack = []
@@ -16,13 +16,13 @@ def find_match():
 
     for char in s:
         if char in parantheses_dict:      ## if current char is one of ")", "]", "}".
-            try:
-                if stack[-1] == parantheses_dict[char]:  ## if the last char in the stack list == value of current char in dict
-                    stack.pop()  ## remove the last char from the stack list
-                else:    ## if the last char in stack list != value of current char in dict
-                    return False
-            except IndexError: ## returns False if the stack list is empty when the char == key in dict
+            # try:
+            if stack[-1] == parantheses_dict[char]:  ## if the last char in the stack list == value of current char in dict
+                stack.pop()  ## remove the last char from the stack list
+            else:    ## if the last char in stack list != value of current char in dict
                 return False
+            # except IndexError: ## returns False if the stack list is empty when the char == key in dict
+            #     return False
 
         else:
             stack.append(char)  ## if char not a key in dict add it to the stack list

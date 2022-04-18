@@ -1,4 +1,17 @@
-stack = ["a"]
+class MyHashSet:
+    def __init__(self):
+        self.set = []
 
-print(stack[-1])
+    def add(self, key):
+        if key not in self.set:
+            self.set.append(key)
 
+    def remove(self, key):
+        if key in self.set:
+            self.set.remove(key)
+
+    def contains(self, key):
+        if key in self.set:
+            return True
+        else:
+            return False
