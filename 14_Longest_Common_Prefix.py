@@ -4,6 +4,9 @@
 ### Ex: given_words = ["dog", "racecar"]
 ### Result = ""
 ################################################################################
+import time
+start_time = time.time()
+
 given_words = ["flower", "flow", "flight"]
 
 def find_prefix():
@@ -18,3 +21,5 @@ def find_prefix():
     return result
 
 print(find_prefix())
+
+print("--- %s seconds ---" % (time.time() - start_time))
